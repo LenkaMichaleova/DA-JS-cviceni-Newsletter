@@ -1,6 +1,7 @@
+const newsletterElm = document.querySelector(".newsletter")
+
 newsletterElm.addEventListener("submit", (e) => {
     e.preventDefault()
-    const newsletterElm = document.querySelector(".newsletter")
     const email = document.querySelector(".email").value
     
     newsletterElm.innerHTML = `
