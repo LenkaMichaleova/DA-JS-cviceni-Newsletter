@@ -1,10 +1,19 @@
 const newsletterElm = document.querySelector(".newsletter")
+const email = document.querySelector(".email")
 
-newsletterElm.addEventListener("submit", (e) => {
+email.addEventListener("input", (e) => {
     e.preventDefault()
-    const email = document.querySelector(".email").value
-    
-    newsletterElm.innerHTML = `
-    <p>Děkujeme za váš zájem. Těšte se na novinky ze světa frontendu a UX na vaší adrese ${email}</p>
-    `
+    if (email.value.length === 0 || !email.value.includes("@")) {
+        email.classList.add("email--wrong")
+
+    } else {
+        email.classList.remove("email--wrong")
+        newsletterElm.addEventListener("submit", (e) => {
+            e.preventDefault()
+        
+            newsletterElm.innerHTML = `
+            <p>Děkujeme za váš zájem. Těšte se na novinky ze světa frontendu a UX na vaší adrese ${email.value}</p>
+            `
+        })
+    }
 })

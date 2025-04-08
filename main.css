@@ -26,3 +26,7 @@ body {
     max-width: 90%;
     margin-bottom: 4%;
 }
+
+.email--wrong {
+    border: 2px solid red;
+}
